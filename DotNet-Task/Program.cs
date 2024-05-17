@@ -10,18 +10,9 @@ builder.Services.AddSingleton((provider) =>
     var primaryKey = configuration["CosmosDbSettings:PrimaryKey"];
     var databaseName = configuration["CosmosDbSettings:DatabaseName"];
 
-    //var cosmosSettings = configuration.GetSection("DotNetTestDb");
-    //var cosmosEndpoint = cosmosSettings.GetValue<string>("Endpoint");
-    //var cosmosKey = cosmosSettings.GetValue<string>("Key");
-
     var cosmosClientOptions = new CosmosClientOptions
     {
         ApplicationName = databaseName
-        //    ConnectionMode = ConnectionMode.Direct,
-        //    SerializerOptions = new CosmosSerializationOptions
-        //    {
-        //        PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase
-        //    }
     };
 
     var loggerFactory = LoggerFactory.Create(builder =>
